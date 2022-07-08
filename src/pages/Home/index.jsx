@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Box } from "@mui/material";
 import React, { useState } from "react";
 import Exercises from "../../components/Exercises";
@@ -17,7 +16,11 @@ const Home = () => {
         bodyPart={bodyPart}
         setBodyPart={setBodyPart}
       />
-      <Exercises />
+      <Exercises
+        exercises={exercises}
+        setExercises={setExercises}
+        bodyPart={bodyPart}
+      />
     </Box>
   );
 };

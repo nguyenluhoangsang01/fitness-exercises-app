@@ -1,6 +1,6 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { BODYPARTLIST_BASE_URL, EXERCISES_BASE_URL } from "../../config";
+import { BODY_PART_LIST_BASE_URL, EXERCISES_BASE_URL } from "../../config";
 import { exerciseDBOptions, fetchData } from "../../utils/fetchData";
 import HorizontalScrollbar from "../HorizontalScrollbar";
 
@@ -11,7 +11,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
   useEffect(() => {
     const fetchExercisesData = async () => {
       const bodyPartsData = await fetchData(
-        BODYPARTLIST_BASE_URL,
+        BODY_PART_LIST_BASE_URL,
         exerciseDBOptions
       );
 
