@@ -16,6 +16,11 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, isBodyParts }) => {
           title={item.id || item}
           m="0 40px"
           style={{ userSelect: "none" }}
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+            })
+          }
         >
           {isBodyParts ? (
             <BodyPart
