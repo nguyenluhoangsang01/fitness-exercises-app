@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BODY_PART_BASE_URL, EXERCISES_BASE_URL } from "../../config";
 import { exerciseDBOptions, fetchData } from "../../utils/fetchData";
 import ExerciseCard from "../ExerciseCard";
+import Loader from "../Loader";
 
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,7 +38,6 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
     window.scrollTo({
       top: 1800,
-      behavior: "smooth",
     });
   };
 
@@ -65,9 +65,13 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
           mt: "40px",
         }}
       >
-        {currentExercises.map((exercise, index) => (
-          <ExerciseCard key={exercise.id || index} exercise={exercise} />
-        ))}
+        {currentExercises ? (
+          currentExercises.map((exercise) => (
+            <ExerciseCard key={exercise.id} exercise={exercise} />
+          ))
+        ) : (
+          <Loader />
+        )}
       </Stack>
       <Stack mt="100px" alignItems={"center"}>
         {exercises.length > exercisesPerPage && (

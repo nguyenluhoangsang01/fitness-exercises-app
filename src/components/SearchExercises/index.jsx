@@ -42,6 +42,12 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     }
   };
 
+  const handleKeyEnter = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <Stack alignItems="center" justifyContent="center" mt="37px" p="20px">
       <Typography
@@ -60,6 +66,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
           value={searchTerm}
           type="text"
           onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyUp={(e) => handleKeyEnter(e)}
           label="Search Exercises"
           variant="outlined"
           sx={{
@@ -109,9 +116,10 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
       <Box sx={{ position: "relative", width: "100%", p: "20px" }}>
         <HorizontalScrollbar
-          bodyParts={bodyParts}
+          data={bodyParts}
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}
+          isBodyParts
         />
       </Box>
     </Stack>

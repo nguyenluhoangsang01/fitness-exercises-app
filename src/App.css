@@ -59,6 +59,7 @@
   padding-bottom: 10px;
   transform: scale(1, 1);
   transition: 0.3s all ease-in-out;
+  cursor: pointer;
 }
 
 .exercise-card img {
@@ -87,6 +88,17 @@
   width: 387px;
   height: 381px;
   text-decoration: none;
+}
+
+.exercise-video img {
+  height: 100%;
+  border: 1px solid #ff2625;
+  border-top-left-radius: 30px;
+  padding: 5px;
+}
+
+.exercise-video:hover img {
+  box-shadow: 0 0 2px 1px rgba(255, 38, 37, 0.5);
 }
 
 .react-horizontal-scrolling-menu--scroll-container {
